@@ -3,7 +3,9 @@
  * @author Niklas Palmqvist <niklas@decisign.se>
  */
 
-require_once 'SportsData.php';
+namespace SportsData;
+use SportsData\SportsData;
+//require_once 'SportsData.php';
 
 
 class SportsDataHandball extends SportsData {

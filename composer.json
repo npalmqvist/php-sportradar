@@ -1,0 +1,11 @@
+{
+    "name": "npalmqvist/php-sportradar",
+    "autoload": {
+        "psr-0": {
+            "SportsData": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.6.0"
+    },
+}

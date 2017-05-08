@@ -3,6 +3,8 @@
  * @author Konrad Baron <konradbaron@gmail.com> http://kobatechnologies.com
  */
 
+ namespace SportsData;
+
 class SportsData {
 
 	protected $api_key;
