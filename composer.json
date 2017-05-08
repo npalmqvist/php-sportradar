@@ -1,5 +1,16 @@
 {
     "name": "npalmqvist/php-sportradar",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Niklas Palmqvist",
+            "email": "niklas@decisign.se"
+        },
+        {
+            "name": "Konrad Baron",
+            "email": "konradbaron@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-0": {
             "SportsData": "src/"
