@@ -7,11 +7,5 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
-    "repositories": [
-    {
-        "type": "vcs",
-    	"url": "https://github.com/npalmqvist/php-sportradar"
-	}
-]
+    "require": {}
 }
