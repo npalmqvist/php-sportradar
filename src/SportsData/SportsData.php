@@ -13,7 +13,6 @@ class SportsData {
 	protected $format; // xml, json
 	protected $year; // Four digit year
 	protected $access_level; // Real-Time (rt), Premium (p), Standard (s), Basic (b), Trial (t)
-    protected $language; //  any valid ISO-646 language code
 	private $format_valid = array('json','xml');
 	private $access_level_valid = array('rt','p','s','b','t');
 
@@ -35,7 +34,6 @@ class SportsData {
 
 	protected function curl($send_url) {
 		$url = $this->url_protocol.$this->send_url;
-
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);

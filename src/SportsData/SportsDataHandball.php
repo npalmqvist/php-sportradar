@@ -11,12 +11,14 @@ use SportsData\SportsData;
 class SportsDataHandball extends SportsData {
 
 	private $base_url = "api.sportradar.com/handball-";
+	private $language; //  any valid ISO-646 language code
 	private $version; // Whole number (sequential, starting with the number 1)
 
-	public function __construct($api_key,$version,$access_level,$format = 'json',$secure = false) {
+	public function __construct($api_key,$version,$access_level,$language = 'sv',$format = 'json',$secure = false) {
 		$this->api_key = $api_key;
 		$this->version = $this->check_version($version);
 		$this->access_level = $this->check_access_level($access_level);
+		$this->language = $language;
 		$this->format = $this->check_format($format);
 		$this->url_protocol = $secure ? 'https://' : 'http://';
 	}
@@ -99,6 +101,7 @@ class SportsDataHandball extends SportsData {
 	**/
 	public function seasons($tournament_id) {
 		$this->send_url = $this->base_url.$this->access_level.$this->version.'/'.$this->language.'/tournaments/'.$tournament_id.'/seasons.'.$this->format.'?api_key='.$this->api_key;
+		var_dump($this->send_url);
 		return $this->curl($this->send_url);
 	}
 
@@ -135,9 +138,8 @@ class SportsDataHandball extends SportsData {
 	/**
 	* Provides a list of all tournaments
 	* https://developer.sportradar.com/files/indexHandball.html#tournament-list
-	* @param string $tournament_id
 	**/
-	public function tournament_list($tournament_id) {
+	public function tournament_list() {
 		$this->send_url = $this->base_url.$this->access_level.$this->version.'/'.$this->language.'/tournaments.'.$this->format.'?api_key='.$this->api_key;
 		return $this->curl($this->send_url);
 	}
